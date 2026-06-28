@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Winston AI — Ritwij Ghosh</title>
+  <meta name="description" content="Winston AI: Agentic Travel Butler — a chat-first AI concierge with 8 MCP servers for autonomous trip planning and booking." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/projects.css" />
+</head>
+
+<body>
+
+  <nav id="navbar">
+    <a href="../index.html" class="nav-brand">Ritwij Ghosh</a>
+    <ul class="nav-links">
+      <li><a href="../about.html"   data-section="about">About</a></li>
+      <li><a href="../projects.html" data-section="projects">Projects</a></li>
+      <li><a href="../contact.html" data-section="contact">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-mobile">
+      <a href="../about.html"   data-section="about">About</a>
+      <a href="../projects.html" data-section="projects">Projects</a>
+      <a href="../contact.html" data-section="contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="project-detail-header">
+    <a href="../projects.html" class="project-back">
+      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      All Projects
+    </a>
+
+    <div class="project-detail-tags fade-in">
+      <span class="tag">Expo / React Native</span>
+      <span class="tag">FastAPI</span>
+      <span class="tag">Supabase</span>
+      <span class="tag">PostgreSQL</span>
+      <span class="tag">MCP</span>
+      <span class="tag">Agentic AI</span>
+    </div>
+
+    <h1 class="project-detail-title fade-in">Winston AI: Agentic Travel Butler</h1>
+  </header>
+
+  <!-- Body -->
+  <div class="project-detail-body">
+
+    <div class="project-detail-content">
+      <h2>Overview</h2>
+      <p>
+        Winston AI is a chat-first mobile travel concierge built with Expo/React Native, designed to handle end-to-end trip planning and booking autonomously. The user describes a trip in natural language — destination, dates, budget, preferences — and Winston handles everything from itinerary generation to flight search, hotel booking, and calendar export.
+      </p>
+
+      <h2>Agentic Architecture</h2>
+      <p>
+        The core of Winston is an agentic orchestration layer built around 8 production MCP (Model Context Protocol) servers, each responsible for a distinct domain: flight search, hotel availability, restaurant discovery, activity curation, weather, calendar export, currency conversion, and itinerary persistence. A custom orchestration gateway routes LLM-generated tool calls to the appropriate MCP server, collects responses, and feeds them back into context — enabling fully autonomous multi-step pipelines with no human-in-the-loop.
+      </p>
+      <p>
+        The gateway enforces a strict normalized itinerary schema across all boundaries: LLM outputs are validated against the schema before persistence, FastAPI routes accept and return typed Pydantic models matching the schema, and Supabase/Postgres tables mirror the same structure. This ensures the itinerary state is always consistent regardless of which server updated it.
+      </p>
+
+      <h2>Backend &amp; Data Layer</h2>
+      <p>
+        The FastAPI backend exposes REST endpoints consumed by the mobile client and the MCP gateway. Authentication and row-level security are handled through Supabase. Real-time itinerary updates use Supabase subscriptions, so the mobile UI reflects changes as they're written by the agent without manual polling.
+      </p>
+
+      <h2>Key Engineering Decisions</h2>
+      <p>
+        Choosing MCP as the tool-calling protocol rather than raw function calling allowed each integration to be independently versioned and swapped without touching the orchestration layer. The orchestration gateway also implements retry logic and graceful degradation — if one MCP server is unavailable, the agent continues planning with the remaining tools and flags the missing data to the user.
+      </p>
+    </div>
+
+    <aside class="project-detail-sidebar">
+      <div class="detail-callout">
+        <p class="detail-callout-label">Key Metrics</p>
+        <div class="detail-metric">8 production MCP servers</div>
+        <div class="detail-metric">Fully autonomous booking pipeline</div>
+        <div class="detail-metric">Zero human-in-the-loop for end-to-end trips</div>
+        <div class="detail-metric">Real-time itinerary sync via Supabase</div>
+      </div>
+
+      <div class="detail-callout">
+        <p class="detail-callout-label">Tech Stack</p>
+        <div class="detail-tech-tags">
+          <span class="tag">Expo</span>
+          <span class="tag">React Native</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Supabase</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">MCP</span>
+          <span class="tag">Pydantic</span>
+          <span class="tag">Python</span>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Project navigation -->
+  <nav class="project-nav" aria-label="Project navigation">
+    <a href="../projects.html">
+      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      All Projects
+    </a>
+    <a href="aimfp.html">
+      AIMFP: Melt Pool Monitoring
+      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </a>
+  </nav>
+
+  <footer>
+    &copy; 2026 Ritwij Ghosh &nbsp;·&nbsp; Built with HTML, CSS &amp; JS
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

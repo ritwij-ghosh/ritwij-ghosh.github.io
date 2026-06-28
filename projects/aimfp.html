@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIMFP — Ritwij Ghosh</title>
+  <meta name="description" content="CV-driven melt pool monitoring in laser powder bed fusion — research at Georgia Tech AIMFP." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/projects.css" />
+</head>
+
+<body>
+
+  <nav id="navbar">
+    <a href="../index.html" class="nav-brand">Ritwij Ghosh</a>
+    <ul class="nav-links">
+      <li><a href="../about.html"   data-section="about">About</a></li>
+      <li><a href="../projects.html" data-section="projects">Projects</a></li>
+      <li><a href="../contact.html" data-section="contact">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-mobile">
+      <a href="../about.html"   data-section="about">About</a>
+      <a href="../projects.html" data-section="projects">Projects</a>
+      <a href="../contact.html" data-section="contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="project-detail-header">
+    <a href="../projects.html" class="project-back">
+      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      All Projects
+    </a>
+
+    <div class="project-detail-tags fade-in">
+      <span class="tag">TensorFlow</span>
+      <span class="tag">Keras</span>
+      <span class="tag">U-Net</span>
+      <span class="tag">Computer Vision</span>
+      <span class="tag">Research</span>
+      <span class="tag">Napari</span>
+    </div>
+
+    <h1 class="project-detail-title fade-in">Qualification of In-Situ Melt Pool Monitoring in Laser Powder Bed Fusion</h1>
+  </header>
+
+  <!-- Body -->
+  <div class="project-detail-body">
+
+    <div class="project-detail-content">
+      <h2>Research Context</h2>
+      <p>
+        This work was conducted as a Research Intern at Georgia Tech's AI in Manufacturing Pilot Facility (AIMFP), where I focused on applying computer vision techniques to additive manufacturing quality control. Laser powder bed fusion (LPBF) is a 3D printing process that builds metal parts layer-by-layer using a high-power laser. Defects introduced during printing — such as porosity, lack of fusion, or keyhole collapse — are difficult to detect after the fact, making in-situ (real-time) monitoring critical.
+      </p>
+
+      <h2>CV Pipeline</h2>
+      <p>
+        I trained U-Net and CNN-based segmentation models on high-resolution melt pool images captured during the LPBF process. Each image captures the thermal signature of the melt pool — the region where the laser is fusing metal powder. Anomalies in the melt pool shape, size, or intensity distribution are early indicators of layer-wise defects.
+      </p>
+      <p>
+        The pipeline includes aggressive data augmentation (random crops, brightness/contrast jitter, horizontal flips) to handle the limited dataset size typical of manufacturing research. Custom loss functions combining Dice loss with binary cross-entropy improved segmentation accuracy on small, high-contrast defect regions. Models were evaluated using IoU and F1 metrics per defect class.
+      </p>
+
+      <h2>3D Visualization &amp; Expert Review Tool</h2>
+      <p>
+        Beyond model training, I built a Napari-based 3D CAD viewer that allows engineers to inspect defect predictions layer-by-layer in three dimensions. By stacking per-layer segmentation masks and rendering them as a volumetric defect map, the tool makes it possible to identify defect clusters and trace their spatial distribution through the printed part. This cut expert review time by 65% compared to manually inspecting individual frame sequences.
+      </p>
+
+      <h2>Publication</h2>
+      <p>
+        This research culminated in a co-authored paper: <em>"Qualification of In-Situ Melt Pool Monitoring in Laser Powder Bed Fusion."</em>
+      </p>
+    </div>
+
+    <aside class="project-detail-sidebar">
+      <div class="detail-callout">
+        <p class="detail-callout-label">Key Metrics</p>
+        <div class="detail-metric">65% reduction in expert review time</div>
+        <div class="detail-metric">Co-authored published paper</div>
+        <div class="detail-metric">IoU/F1 segmentation evaluation</div>
+        <div class="detail-metric">Napari-based 3D defect viewer</div>
+      </div>
+
+      <div class="detail-callout">
+        <p class="detail-callout-label">Tech Stack</p>
+        <div class="detail-tech-tags">
+          <span class="tag">TensorFlow</span>
+          <span class="tag">Keras</span>
+          <span class="tag">U-Net</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">Napari</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">Matplotlib</span>
+          <span class="tag">Python</span>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Project navigation -->
+  <nav class="project-nav" aria-label="Project navigation">
+    <a href="winston-ai.html">
+      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      Winston AI
+    </a>
+    <a href="simplilearn.html">
+      SimpliEarn
+      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </a>
+  </nav>
+
+  <footer>
+    &copy; 2026 Ritwij Ghosh &nbsp;·&nbsp; Built with HTML, CSS &amp; JS
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

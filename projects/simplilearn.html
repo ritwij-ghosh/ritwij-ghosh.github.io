@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SimpliEarn — Ritwij Ghosh</title>
+  <meta name="description" content="SimpliEarn: earnings call intelligence platform using FinBERT, generating 116% returns trading straddle options." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/projects.css" />
+</head>
+
+<body>
+
+  <nav id="navbar">
+    <a href="../index.html" class="nav-brand">Ritwij Ghosh</a>
+    <ul class="nav-links">
+      <li><a href="../about.html"   data-section="about">About</a></li>
+      <li><a href="../projects.html" data-section="projects">Projects</a></li>
+      <li><a href="../contact.html" data-section="contact">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-mobile">
+      <a href="../about.html"   data-section="about">About</a>
+      <a href="../projects.html" data-section="projects">Projects</a>
+      <a href="../contact.html" data-section="contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="project-detail-header">
+    <a href="../projects.html" class="project-back">
+      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      All Projects
+    </a>
+
+    <div class="project-detail-tags fade-in">
+      <span class="tag">FinBERT</span>
+      <span class="tag">FastAPI</span>
+      <span class="tag">Supabase</span>
+      <span class="tag">GCP</span>
+      <span class="tag">NLP</span>
+      <span class="tag">FAISS</span>
+      <span class="tag">Quant Finance</span>
+    </div>
+
+    <h1 class="project-detail-title fade-in">SimpliEarn: Earnings Call Intelligence</h1>
+  </header>
+
+  <!-- Body -->
+  <div class="project-detail-body">
+
+    <div class="project-detail-content">
+      <h2>Problem</h2>
+      <p>
+        Earnings calls are among the most information-dense events in public markets — but extracting actionable signals from hours of transcripts is slow, manual, and inconsistent. SimpliEarn was built to automate this pipeline: ingest earnings call transcripts, extract structured sentiment and forward-guidance signals using NLP, and use those signals to drive an algorithmic trading strategy.
+      </p>
+      <p>
+        Built as a team project under Georgia Tech's Big Data Big Impact club, SimpliEarn grew into a full-stack platform with a React frontend, FastAPI backend deployed on GCP, and Supabase for persistent storage and auth.
+      </p>
+
+      <h2>NLP Pipeline</h2>
+      <p>
+        Transcripts are chunked and passed through FinBERT, a BERT model fine-tuned on financial text, to produce sentence-level sentiment scores (positive, negative, neutral) across key sections: management commentary, analyst Q&amp;A, and forward guidance. Sentence embeddings are indexed with FAISS for semantic retrieval — allowing the system to surface the most relevant passages given a user query or ticker.
+      </p>
+      <p>
+        A Chain-of-Thought prompting layer runs on top of the FinBERT output to extract structured signals: EPS vs. estimate delta, revenue guidance direction, management tone shift, and risk factor mentions. This hybrid approach (fine-tuned classifier + CoT reasoning) produced more reliable structured outputs than either method alone.
+      </p>
+
+      <h2>Trading Strategy</h2>
+      <p>
+        Extracted sentiment signals were used to algorithmically trade straddle options around earnings announcements. A straddle (long call + long put at the same strike) profits from large price moves in either direction — making it a natural fit for earnings volatility plays. The strategy sized positions based on sentiment confidence and historical volatility, and managed risk with predefined stop levels.
+      </p>
+      <p>
+        Over the backtested period, the strategy generated 116% returns. These figures are from a backtested period covering multiple earnings cycles.
+      </p>
+
+      <h2>Pipeline Optimization</h2>
+      <p>
+        The original pipeline had high latency due to sequential FinBERT inference and redundant API calls to the LLM layer. Through batched inference, response caching keyed by transcript hash, and prompt compression, we cut end-to-end latency by 42% and reduced API costs by 28% without degrading output quality.
+      </p>
+    </div>
+
+    <aside class="project-detail-sidebar">
+      <div class="detail-callout">
+        <p class="detail-callout-label">Key Metrics</p>
+        <div class="detail-metric">116% returns (backtested)</div>
+        <div class="detail-metric">42% latency reduction</div>
+        <div class="detail-metric">28% API cost savings</div>
+        <div class="detail-metric">FAISS semantic search over transcripts</div>
+      </div>
+
+      <div class="detail-callout">
+        <p class="detail-callout-label">Tech Stack</p>
+        <div class="detail-tech-tags">
+          <span class="tag">FinBERT</span>
+          <span class="tag">FAISS</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">React</span>
+          <span class="tag">Supabase</span>
+          <span class="tag">GCP</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Python</span>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Project navigation -->
+  <nav class="project-nav" aria-label="Project navigation">
+    <a href="aimfp.html">
+      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      AIMFP Research
+    </a>
+    <a href="ib-agent.html">
+      IB Research Agent
+      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </a>
+  </nav>
+
+  <footer>
+    &copy; 2026 Ritwij Ghosh &nbsp;·&nbsp; Built with HTML, CSS &amp; JS
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IB Research Agent — Ritwij Ghosh</title>
+  <meta name="description" content="AI Investment Banking Research Agent — LangChain/LangGraph agent with Neo4j knowledge graph for portfolio signal aggregation." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/projects.css" />
+</head>
+
+<body>
+
+  <nav id="navbar">
+    <a href="../index.html" class="nav-brand">Ritwij Ghosh</a>
+    <ul class="nav-links">
+      <li><a href="../about.html"   data-section="about">About</a></li>
+      <li><a href="../projects.html" data-section="projects">Projects</a></li>
+      <li><a href="../contact.html" data-section="contact">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-mobile">
+      <a href="../about.html"   data-section="about">About</a>
+      <a href="../projects.html" data-section="projects">Projects</a>
+      <a href="../contact.html" data-section="contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="project-detail-header">
+    <a href="../projects.html" class="project-back">
+      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      All Projects
+    </a>
+
+    <div class="project-detail-tags fade-in">
+      <span class="tag">LangChain</span>
+      <span class="tag">LangGraph</span>
+      <span class="tag">Neo4j</span>
+      <span class="tag">NetworkX</span>
+      <span class="tag">yfinance</span>
+      <span class="tag">NewsAPI</span>
+    </div>
+
+    <h1 class="project-detail-title fade-in">AI Investment Banking Research Agent</h1>
+  </header>
+
+  <!-- Body -->
+  <div class="project-detail-body">
+
+    <div class="project-detail-content">
+      <h2>Overview</h2>
+      <p>
+        This project is a LangChain/LangGraph agentic system designed to automate the research workflows common in investment banking and equity analysis. Given a portfolio of holdings, the agent continuously monitors news and price data, identifies material events, ranks their relevance to the portfolio, and surfaces alerts with LLM-generated research briefs.
+      </p>
+
+      <h2>Multi-Source Signal Aggregation</h2>
+      <p>
+        The agent pulls from two primary data sources: yfinance for real-time and historical price/fundamental data, and NewsAPI for news articles across financial publications. For each holding, the agent retrieves recent articles, filters for material events (earnings surprises, M&amp;A activity, regulatory filings, analyst rating changes), and scores their estimated impact on the user's position size and portfolio weighting.
+      </p>
+      <p>
+        LangGraph's stateful graph execution model is used to orchestrate the multi-step research loop: fetch → filter → score → summarize → write → alert. Each node in the graph is a discrete function with typed inputs/outputs, making the pipeline inspectable and extensible.
+      </p>
+
+      <h2>Knowledge Graph (Neo4j)</h2>
+      <p>
+        Research findings are written to a continuously updated knowledge graph built on Neo4j (with NetworkX used for in-memory graph operations during processing). Nodes represent tickers, companies, industries, analysts, and news events. Edges encode relationships: "covers," "competes with," "reported by," "affects sector," and so on.
+      </p>
+      <p>
+        This graph structure enables cross-portfolio queries that flat databases cannot efficiently support — for example, identifying second-order impacts (a supplier disruption at one holding affecting another holding's supply chain) or clustering correlated risk events by sector.
+      </p>
+
+      <h2>Research Brief Generation</h2>
+      <p>
+        For each material alert, the agent generates a structured research brief using LLM summarization over the retrieved articles and knowledge graph context. Briefs follow a consistent template: event summary, affected holdings, estimated impact direction, supporting evidence, and recommended follow-up actions. These are delivered as push notifications and stored for historical review.
+      </p>
+    </div>
+
+    <aside class="project-detail-sidebar">
+      <div class="detail-callout">
+        <p class="detail-callout-label">Key Features</p>
+        <div class="detail-metric">Neo4j knowledge graph with relationship traversal</div>
+        <div class="detail-metric">Multi-source signal aggregation (yfinance + NewsAPI)</div>
+        <div class="detail-metric">LangGraph stateful research loop</div>
+        <div class="detail-metric">LLM-generated research briefs</div>
+      </div>
+
+      <div class="detail-callout">
+        <p class="detail-callout-label">Tech Stack</p>
+        <div class="detail-tech-tags">
+          <span class="tag">LangChain</span>
+          <span class="tag">LangGraph</span>
+          <span class="tag">Neo4j</span>
+          <span class="tag">NetworkX</span>
+          <span class="tag">yfinance</span>
+          <span class="tag">NewsAPI</span>
+          <span class="tag">Python</span>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Project navigation -->
+  <nav class="project-nav" aria-label="Project navigation">
+    <a href="simplilearn.html">
+      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      SimpliEarn
+    </a>
+    <a href="../projects.html">
+      All Projects
+      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </a>
+  </nav>
+
+  <footer>
+    &copy; 2026 Ritwij Ghosh &nbsp;·&nbsp; Built with HTML, CSS &amp; JS
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

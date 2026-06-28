@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Ritwij Ghosh</title>
+  <meta name="description" content="Selected projects by Ritwij Ghosh — AI/ML research, full-stack engineering, and quant finance." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/projects.css" />
+</head>
+
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-brand">Ritwij Ghosh</a>
+    <ul class="nav-links">
+      <li><a href="about.html"    data-section="about">About</a></li>
+      <li><a href="projects.html" data-section="projects">Projects</a></li>
+      <li><a href="contact.html"  data-section="contact">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-mobile">
+      <a href="about.html"    data-section="about">About</a>
+      <a href="projects.html" data-section="projects">Projects</a>
+      <a href="contact.html"  data-section="contact">Contact</a>
+    </div>
+  </nav>
+
+  <section id="projects">
+    <p class="section-label fade-in">Selected Work</p>
+    <h1 class="section-title fade-in">Projects</h1>
+
+    <div class="projects-stack">
+
+      <!-- Card 1 — Winston AI -->
+      <a href="projects/winston-ai.html" class="project-card fade-in">
+        <div class="project-main">
+          <div class="project-tags">
+            <span class="tag">Expo / React Native</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">MCP</span>
+            <span class="tag">Agentic AI</span>
+          </div>
+          <h2 class="project-title">Winston AI: Agentic Travel Butler</h2>
+          <p class="project-desc">
+            Chat-first AI travel concierge mobile app for end-to-end itinerary planning and booking. Architected an agentic system with 8 production MCP servers behind a custom orchestration gateway — enabling fully autonomous multi-step trip planning, booking, and export with no human-in-the-loop.
+          </p>
+        </div>
+        <div class="project-stat">
+          <p class="project-stat-label">Highlight</p>
+          8 MCP servers · Fully autonomous booking pipeline
+        </div>
+      </a>
+
+      <!-- Card 2 — AIMFP -->
+      <a href="projects/aimfp.html" class="project-card fade-in">
+        <div class="project-main">
+          <div class="project-tags">
+            <span class="tag">TensorFlow</span>
+            <span class="tag">Keras</span>
+            <span class="tag">U-Net</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Research</span>
+          </div>
+          <h2 class="project-title">Qualification of In-Situ Melt Pool Monitoring in LPBF</h2>
+          <p class="project-desc">
+            Co-authored a published paper on computer vision-driven defect monitoring in laser powder bed fusion manufacturing. Trained U-Net/CNN segmentation models on high-resolution melt pool images to detect layer-wise defects. Built a Napari-based 3D CAD viewer that cut expert review time by 65%.
+          </p>
+        </div>
+        <div class="project-stat">
+          <p class="project-stat-label">Highlight</p>
+          65% reduction in expert review time · Co-authored paper
+        </div>
+      </a>
+
+      <!-- Card 3 — SimpliEarn -->
+      <a href="projects/simplilearn.html" class="project-card fade-in">
+        <div class="project-main">
+          <div class="project-tags">
+            <span class="tag">FinBERT</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">GCP</span>
+            <span class="tag">NLP</span>
+            <span class="tag">Quant Finance</span>
+          </div>
+          <h2 class="project-title">SimpliEarn: Earnings Call Intelligence</h2>
+          <p class="project-desc">
+            Full-stack earnings call intelligence platform using FinBERT sentiment analysis and LLM-based extraction (FAISS embeddings, Chain-of-Thought prompting). Optimized the end-to-end LLM pipeline to cut latency by 42% and API costs by 28%. Algorithmically traded straddle options — generating 116% returns.
+          </p>
+        </div>
+        <div class="project-stat">
+          <p class="project-stat-label">Highlight</p>
+          116% returns · 42% latency reduction · 28% API cost savings
+        </div>
+      </a>
+
+      <!-- Card 4 — IB Research Agent -->
+      <a href="projects/ib-agent.html" class="project-card fade-in">
+        <div class="project-main">
+          <div class="project-tags">
+            <span class="tag">LangChain</span>
+            <span class="tag">LangGraph</span>
+            <span class="tag">Neo4j</span>
+            <span class="tag">yfinance</span>
+            <span class="tag">NLP</span>
+          </div>
+          <h2 class="project-title">AI Investment Banking Research Agent</h2>
+          <p class="project-desc">
+            LangChain/LangGraph agent that scans portfolio holdings via yfinance and NewsAPI, ranks relevance to the user's portfolio, and sends alerts on material deltas. Writes to a continuously updated Neo4j knowledge graph keyed by tickers and industries, with LLM summarization to generate research briefs.
+          </p>
+        </div>
+        <div class="project-stat">
+          <p class="project-stat-label">Highlight</p>
+          Neo4j knowledge graph · Multi-source signal aggregation
+        </div>
+      </a>
+
+    </div>
+
+    <p class="competitions-line fade-in">
+      <span class="highlight">1st Place</span> @ Microsoft JITO Hackathon &nbsp;·&nbsp;
+      <span class="highlight">Runner Up</span> @ TartanHacks &nbsp;·&nbsp;
+      IMC Prosperity 4
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2026 Ritwij Ghosh &nbsp;·&nbsp; Built with HTML, CSS &amp; JS
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

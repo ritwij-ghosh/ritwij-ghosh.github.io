@@ -1,0 +1,67 @@
+/* =============================================
+   ABOUT PAGE
+============================================= */
+
+#about {
+  background: var(--bg-secondary);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 60fr 40fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+/* ---- Bio column ---- */
+.about-bio p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.about-bio p:last-child { margin-bottom: 0; }
+
+.about-bio p strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ---- Skills column ---- */
+.skills-col {
+  position: sticky;
+  top: 5rem;
+}
+
+.skill-row {
+  margin-bottom: 1.5rem;
+}
+
+.skill-row:last-child { margin-bottom: 0; }
+
+.skill-category {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* =============================================
+   RESPONSIVE
+============================================= */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-col { position: static; }
+}

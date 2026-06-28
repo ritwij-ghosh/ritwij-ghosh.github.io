@@ -1,0 +1,81 @@
+/* =============================================
+   CONTACT PAGE
+============================================= */
+
+#contact {
+  background: var(--bg-secondary);
+}
+
+.contact-inner {
+  max-width: 600px;
+}
+
+.contact-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+}
+
+/* ---- Contact link rows ---- */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: color var(--transition-fast);
+}
+
+.contact-row:hover { color: var(--accent); }
+
+.contact-row:hover .contact-icon {
+  border-color: var(--accent-dim);
+}
+
+.contact-row:hover .contact-icon svg {
+  stroke: var(--accent);
+}
+
+.contact-row:hover .contact-link-text {
+  color: var(--accent);
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--transition-fast);
+}
+
+.contact-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--accent);
+  fill: none;
+  transition: stroke var(--transition-fast);
+}
+
+.contact-label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  min-width: 60px;
+}
+
+.contact-link-text {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
